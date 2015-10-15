@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+   id="cordova-plugin-kakaotalk"
+   name="KakaoTalkCordovaPlugin"
+   version="1.0.0">
+
+    <name>KakaoTalk</name>
+    <description>KakaoTalk Cordova Plugin</description>
+
+	<engines>
+		<engine name="cordova-android" version=">3.9.9" /><!-- Requires Gradle building -->
+	</engines>
+
+    <js-module name="KakaoTalk" src="www/KakaoTalk.js">
+    	<clobbers target="KakaoTalk" />
+    </js-module>
+
+	<preference name="KAKAO_APP_KEY" />
+	<platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="KakaoTalk">
+                <param name="android-package" value="com.lihak.plugin.kakao.KakaoTalk" />
+            </feature>
+            <access origin="https://*.kakao.com" />
+            <access origin="https://*.kakao.co.kr" />
+            <access origin="https://*.kakaocdn.net" />
+        </config-file>
+        
+        <source-file src="src/android/kakao_strings.xml" target-dir="res/values" />
+        <config-file target="res/values/kakao_strings.xml" parent="/*">
+            <string name="kakao_app_key">$KAKAO_APP_KEY</string>
+        </config-file>
+        
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.INTERNET" />
+        </config-file>
+        
+        <config-file target="AndroidManifest.xml" parent="application">
+        	<activity android:name=".common.SampleLoginActivity"
+                  android:screenOrientation="portrait"
+                  android:launchMode="singleTop"/>
+
+	        <activity android:name=".common.SampleSignupActivity"
+	                  android:screenOrientation="portrait"
+	                  android:launchMode="singleTop"/>
+	
+        	<meta-data android:name="com.kakao.sdk.AppKey" android:value="@string/kakao_app_key" />
+        </config-file>
+        
+        <framework src="src/android/kakao.gradle" custom="true" type="gradleReference" />
+		<source-file src="src/android/KakaoTalk.java" target-dir="src/com/lihak/plugin/kakao" />
+    </platform>
+    
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="KakaoTalk">
+                <param name="ios-package" value="KakaoTalk" />
+            </feature>
+        </config-file>
+
+        <source-file src="src/ios/KakaoTalk.m" />
+        <header-file src="src/ios/KakaoTalk.h" />
+        <config-file target="*-Info.plist">
+			<dict>
+				<key>KAKAO_APP_KEY</key>
+				<string>$KAKAO_APP_KEY</string>
+				<key>Kits</key>
+				<array></array>
+			</dict>
+		</config-file>
+    </platform>
+</plugin>
