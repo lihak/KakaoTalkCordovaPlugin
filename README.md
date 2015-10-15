@@ -7,32 +7,36 @@ A plugman compatible Cordova plugin for the KakaoTalk(https://developers.kakao.c
 Cordova Install Note:
 ========================
 
----- Android ----
+__Android
+
 nothing to do ;-)
 
----- iOS ----
+
+__iOS
+
 1. Install Kakao SDK (https://developers.kakao.com/docs/ios)
 2. Add following code to appDelegate
 
 // IMPORT!!!
-#import <KakaoOpenSDK/KakaoOpenSDK.h>
-
+__import <KakaoOpenSDK/KakaoOpenSDK.h>
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
                                        sourceApplication:(NSString *)sourceApplication
                                               annotation:(id)annotation {
     ...
-    // JUST HERE!!!
-    if ([KOSession isKakaoAccountLoginCallback:url]) {
-        return [KOSession handleOpenURL:url];
-    }
+    
+	
+    __if ([KOSession isKakaoAccountLoginCallback:url]) {
+        __return [KOSession handleOpenURL:url];
+    __}
+    
     ...
 }
 
 // Complete METHOD!!!
-- (void)applicationDidBecomeActive:(UIApplication *)application
-{
-    [KOSession handleDidBecomeActive];
-}
+
+__- (void)applicationDidBecomeActive:(UIApplication *)application{
+    __[KOSession handleDidBecomeActive];
+__}
 
 
 cordova plugin add https://github.com/lihak/KakaoTalkCordovaPlugin --variable KAKAO_APP_KEY=<KAKAO_APP_KEY>
