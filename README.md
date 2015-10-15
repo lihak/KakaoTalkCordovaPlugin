@@ -39,7 +39,7 @@ __- (void)applicationDidBecomeActive:(UIApplication *)application{
 __}
 
 
-cordova plugin add https://github.com/lihak/KakaoTalkCordovaPlugin --variable KAKAO_APP_KEY=<KAKAO_APP_KEY>
+cordova plugin add https://github.com/lihak/KakaoTalkCordovaPlugin --variable KAKAO_APP_KEY=%KAKAO_APP_KEY%
 
 
 How to use the plugin
@@ -53,7 +53,7 @@ This plugin adds an object to the window. Right now, you can only login and logo
 
 Login using the `.login` method:
 ```
-KakaoTalk.login({
+KakaoTalk.login(
     success: function (result) {
         console.log('Successful login!');
 		console.log(result);
@@ -62,14 +62,16 @@ KakaoTalk.login({
         console.log('Error logging in');
 		console.log(error);
     }
-});
+);
 
 The login reponse object is defined as:
 ```
 {
-  id: '<KakaoTalk User Id>',
-  nickname: '<KakaoTalk User Nickname>',
-  profile_image: '<KakaoTalk User ProfileImage>'
+
+  id: 'KakaoTalk User Id',
+  nickname: 'KakaoTalk User Nickname',
+  profile_image: 'KakaoTalk User ProfileImage'
+
 }
 ```
 
@@ -78,11 +80,13 @@ The login reponse object is defined as:
 Logout using the `.logout` method:
 ```
 Kakaotalk.logout(
+
   function() {
 	console.log('Successful logout!');
   },
   function() {
     console.log('Error logging out');
   }
+
 );
 ```
