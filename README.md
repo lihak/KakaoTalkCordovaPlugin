@@ -1,7 +1,7 @@
 KakaoTalk Cordova Plugin
 ========================
 
-A plugman compatible Cordova plugin for the KakaoTalk(https://developers.kakao.com) Cordova Plugin.
+A plugman compatible Cordova plugin for the KakaoTalk(https://developers.kakao.com)
 
 
 Cordova Install Note:
