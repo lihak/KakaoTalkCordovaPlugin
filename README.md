@@ -73,13 +73,10 @@ The login reponse object is defined as:
 Logout using the `.logout` method:
 ```
 Kakaotalk.logout(
-    function() {
-	console.log('Successful logout!');
-    },
-  
-    function() {
-	console.log('Error logging out');
-    }
-
+	function() {
+		console.log('Successful logout!');
+	}, function() {
+		console.log('Error logging out');
+	}
 );
 ```
