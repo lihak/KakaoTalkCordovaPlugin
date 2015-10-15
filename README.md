@@ -18,25 +18,21 @@ __iOS
 2. Add following code to appDelegate
 
 // IMPORT!!!
-__import <KakaoOpenSDK/KakaoOpenSDK.h>
-- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
+++import KakaoOpenSDK/KakaoOpenSDK.h
+
+-(BOOL)application:(UIApplication *)application openURL:(NSURL *)url
                                        sourceApplication:(NSString *)sourceApplication
                                               annotation:(id)annotation {
+
     ...
     
-	
-    __if ([KOSession isKakaoAccountLoginCallback:url]) {
-        __return [KOSession handleOpenURL:url];
-    __}
+    ++if ([KOSession isKakaoAccountLoginCallback:url]){return [KOSession handleOpenURL:url];}
     
     ...
+    
 }
 
-// Complete METHOD!!!
-
-__- (void)applicationDidBecomeActive:(UIApplication *)application{
-    __[KOSession handleDidBecomeActive];
-__}
+++- (void)applicationDidBecomeActive:(UIApplication *)application{[KOSession handleDidBecomeActive];}
 
 
 cordova plugin add https://github.com/lihak/KakaoTalkCordovaPlugin --variable KAKAO_APP_KEY=%KAKAO_APP_KEY%
@@ -69,7 +65,9 @@ The login reponse object is defined as:
 {
 
   id: 'KakaoTalk User Id',
+  
   nickname: 'KakaoTalk User Nickname',
+  
   profile_image: 'KakaoTalk User ProfileImage'
 
 }
@@ -81,9 +79,11 @@ Logout using the `.logout` method:
 ```
 Kakaotalk.logout(
 
+
   function() {
 	console.log('Successful logout!');
   },
+  
   function() {
     console.log('Error logging out');
   }
