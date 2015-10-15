@@ -17,23 +17,21 @@ __iOS
 1. Install Kakao SDK (https://developers.kakao.com/docs/ios)
 2. Add following code to appDelegate
 
-// IMPORT!!!
-++import KakaoOpenSDK/KakaoOpenSDK.h
+```
+#import <KakaoOpenSDK/KakaoOpenSDK.h>
 
--(BOOL)application:(UIApplication *)application openURL:(NSURL *)url
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
                                        sourceApplication:(NSString *)sourceApplication
                                               annotation:(id)annotation {
 
     ...
-    
-    ++if ([KOSession isKakaoAccountLoginCallback:url]){return [KOSession handleOpenURL:url];}
-    
+    if ([KOSession isKakaoAccountLoginCallback:url]){return [KOSession handleOpenURL:url];}
     ...
     
 }
 
-++- (void)applicationDidBecomeActive:(UIApplication *)application{[KOSession handleDidBecomeActive];}
-
+- (void)applicationDidBecomeActive:(UIApplication *)application{[KOSession handleDidBecomeActive];}
+```
 
 cordova plugin add https://github.com/lihak/KakaoTalkCordovaPlugin --variable KAKAO_APP_KEY=%KAKAO_APP_KEY%
 
@@ -59,17 +57,14 @@ KakaoTalk.login(
 		console.log(error);
     }
 );
+```
 
 The login reponse object is defined as:
 ```
 {
-
-  id: 'KakaoTalk User Id',
-  
-  nickname: 'KakaoTalk User Nickname',
-  
-  profile_image: 'KakaoTalk User ProfileImage'
-
+  id: '<KakaoTalk User Id>',
+  nickname: '<KakaoTalk User Nickname>',
+  profile_image: '<KakaoTalk User ProfileImage>'
 }
 ```
 
@@ -78,15 +73,13 @@ The login reponse object is defined as:
 Logout using the `.logout` method:
 ```
 Kakaotalk.logout(
-
-
-  function() {
+    function() {
 	console.log('Successful logout!');
-  },
+    },
   
-  function() {
-    console.log('Error logging out');
-  }
+    function() {
+	console.log('Error logging out');
+    }
 
 );
 ```
