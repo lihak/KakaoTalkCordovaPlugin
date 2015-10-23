@@ -1,5 +1,10 @@
+{"id": "cordova-plugin-kakaotalk",
+"name": "KakaoTalkCordovaPlugin",
+"version": "1.0.0",
+"auth": "lihak",
+"email": "lihak.kang@gmail.com",
 "keywords": [
-  "ecosystem:cordova",
+  "kakaotalk:cordova",
   "cordova-android",
   "cordova-ios"
-]
+]}
