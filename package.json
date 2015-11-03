@@ -1,10 +1,27 @@
-{"id": "cordova-plugin-kakaotalk",
-"name": "kakaotalkcordovaplugin",
-"version": "1.0.0",
-"auth": "lihak",
-"email": "lihak.kang@gmail.com",
-"keywords": [
-  "kakaotalk:cordova",
-  "cordova-android",
-  "cordova-ios"
-]}
+{
+  "id": "cordova-plugin-kakaotalk",
+  "name": "cordova-plugin-kakaotalk",
+  "version": "1.0.0",
+  "description": "Cordova KakaoTalk Plugin",
+  "cordova": {
+    "id": "cordova-plugin-kakaotalk",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lihak/KakaoTalkCordovaPlugin"
+  },
+  "keywords": [
+    "cordova",
+    "kakao",
+    "kakaotalk",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "author": "Lihak Kang",
+  "license": "MIT"
+}
