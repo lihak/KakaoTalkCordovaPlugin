@@ -3,7 +3,7 @@ KakaoTalk Cordova Plugin
 
 A plugman compatible Cordova plugin for the KakaoTalk(https://developers.kakao.com)
 
-Make sure you've registered your app with Kakao and have an KAKAO_APP_KEY
+Make sure you've registered your app with Kakao and to have an KAKAO_APP_KEY
 
 Cordova Install Note:
 ========================
