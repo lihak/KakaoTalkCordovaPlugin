@@ -55,7 +55,7 @@ KakaoTalk.login(
     },
     error: function (message) {
         console.log('Error logging in');
-		console.log(error);
+		console.log(message);
     }
 );
 ```
