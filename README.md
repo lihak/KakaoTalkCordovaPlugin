@@ -11,6 +11,7 @@ Cordova Install Note:
 __Android
 
 nothing to do ;-)
+But the Android app must register key hash(https://developers.kakao.com/docs/android#getting-started-launch-sample-app)
 
 
 __iOS
