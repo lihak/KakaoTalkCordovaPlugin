@@ -2,7 +2,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
    id="cordova-plugin-kakaotalk"
    name="cordova-plugin-kakaotalk"
-   version="1.0.0">
+   version="1.0.1">
 
     <name>KakaoTalk</name>
     <description>KakaoTalk Cordova Plugin</description>
