@@ -50,11 +50,11 @@ This plugin adds an object to the window. Right now, you can only login and logo
 Login using the `.login` method:
 ```
 KakaoTalk.login(
-    success: function (result) {
+    function (result) { // success
         console.log('Successful login!');
 		console.log(result);
     },
-    error: function (message) {
+    function (message) { // error
         console.log('Error logging in');
 		console.log(message);
     }
