@@ -78,10 +78,8 @@ public class KakaoTalk extends CordovaPlugin {
 	 */
 	private void login()
 	{
-		cordova.getThreadPool().execute(new Runnable() {
-			@Override
+		currentActivity.runOnUiThread(new Runnable() {
 			public void run() {
-		        //Session.getCurrentSession().checkAndImplicitOpen();
 				Session.getCurrentSession().open(AuthType.KAKAO_TALK, currentActivity);
 			}
 		});
@@ -93,13 +91,11 @@ public class KakaoTalk extends CordovaPlugin {
 	 */
 	private void logout(final CallbackContext callbackContext)
 	{
-		cordova.getThreadPool().execute(new Runnable() {
-			@Override
+		currentActivity.runOnUiThread(new Runnable() {
 			public void run() {
 				UserManagement.requestLogout(new LogoutResponseCallback() {
 			        @Override
 			        public void onCompleteLogout() {
-			        	Log.v(LOG_TAG, "kakao : onCompleteLogout");
 			        	callbackContext.success();
 			        }
 			    });
