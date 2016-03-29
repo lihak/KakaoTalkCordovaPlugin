@@ -24,7 +24,8 @@
 			        NSDictionary *userSession = @{
 										  @"id": result.ID,
 										  @"nickname": [result propertyForKey:@"nickname"],
-										  @"profile_image": [result propertyForKey:@"profile_image"]};
+										  // water0126
+										  @"profile_image": [result propertyForKey:@"profile_image"] != nil ? [result propertyForKey:@"profile_image"] : @""};
 					pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:userSession];
 			    } else {
 			        // failed
