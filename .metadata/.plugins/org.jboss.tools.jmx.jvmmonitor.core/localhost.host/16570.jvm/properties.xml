@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>JVM Properties</comment>
+<entry key="MainClass"/>
+<entry key="Host">localhost</entry>
+<entry key="Pid">16570</entry>
+<entry key="Port">-1</entry>
+</properties>
